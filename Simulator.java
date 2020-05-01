@@ -9,6 +9,7 @@ import java.awt.Color;
  * containing rabbits and foxes.
  * 
  * @author David J. Barnes and Michael Kölling
+ * @author Peter
  * @version 2016.03.18
  */
 public class Simulator
