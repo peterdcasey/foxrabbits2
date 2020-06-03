@@ -73,9 +73,10 @@ public abstract class Animal implements IAnimal
     
     // Get the unique constants from the animal classes
     protected abstract double getBreedProb();
-    protected abstract boolean canBreed();
+    //protected abstract boolean canBreed();
     protected abstract int maxLitter();
     protected abstract int maxAge();
+    protected abstract int getBreedingAge();
     
      /**
      * Generate a number representing the number of births,
@@ -89,6 +90,10 @@ public abstract class Animal implements IAnimal
             births = rand.nextInt(maxLitter()) + 1;
         }
         return births;
+    }
+    
+    protected boolean canBreed() {
+        return age >= getBreedingAge();
     }
     
     /**

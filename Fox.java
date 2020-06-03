@@ -107,6 +107,7 @@ public class Fox extends Animal {
         Field field = getField();
         List<Location> adjacent = field.adjacentLocations(getLocation());
         Iterator<Location> it = adjacent.iterator();
+        Location moveLocation = null;
 
         while (it.hasNext()) {
             Location where = it.next();
@@ -117,12 +118,12 @@ public class Fox extends Animal {
 
                 if (rabbit.isAlive()) {
                     rabbit.setDead();
-                    foodLevel = RABBIT_FOOD_VALUE;
-                    return where;
+                    foodLevel = foodLevel + RABBIT_FOOD_VALUE;
+                    moveLocation = where;
                 }
             }
         }
-        return null;
+        return moveLocation;
     }
 
     /**
@@ -136,10 +137,10 @@ public class Fox extends Animal {
     /**
      * A fox can breed if it has reached the breeding age.
      */
-    @Override
-    protected boolean canBreed() {
-        return age >= BREEDING_AGE;
-    }
+    // @Override
+    // protected boolean canBreed() {
+        // return age >= BREEDING_AGE;
+    // }
 
     @Override
     protected double getBreedProb() {
@@ -155,4 +156,11 @@ public class Fox extends Animal {
     protected int maxAge() {
         return MAX_AGE;
     }
+    
+    @Override
+    protected int getBreedingAge() {
+        return BREEDING_AGE;    
+    }
+
+
 }

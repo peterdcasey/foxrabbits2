@@ -25,6 +25,10 @@ public class PopulationGenerator {
         this.animals = animals;
     }
     
+    /**
+     * Method to set the color of the various animals
+     *   in a view.
+     */
     public void setViewColors(SimulatorView view) {
         view.setColor(Rabbit.class, Color.ORANGE);
         view.setColor(Fox.class, Color.BLUE);

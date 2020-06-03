@@ -82,16 +82,21 @@ public class Rabbit extends Animal {
     protected int maxLitter() {
         return MAX_LITTER_SIZE;
     }
+    
+    @Override
+    protected int getBreedingAge() {
+        return BREEDING_AGE;    
+    }
 
     /**
      * A rabbit can breed if it has reached the breeding age.
      * 
      * @return true if the rabbit can breed, false otherwise.
      */
-    @Override
-    protected boolean canBreed() {
-        return age >= BREEDING_AGE;
-    }
+    //@Override
+    // protected boolean canBreed() {
+        // return age >= BREEDING_AGE;
+    // }
 
     @Override
     protected int maxAge() {
